@@ -1,0 +1,103 @@
+# MAIN base
+baseURL = "https://jackcreative-hugo.staticmania.com"
+languageCode = "en-us"
+title = "JackCreative Hugo"
+theme = "jackcreative"
+summaryLength = 10
+paginate = 6
+
+# Navigation Bar
+[[menu.main]]
+    name = "Project"
+    url = "/project"
+    weight = 2
+[[menu.main]]
+    name = "Behance"
+    url = "x"
+    pre = "https://www.behance.net/"
+    weight = 3
+[[menu.main]]
+    name = "Dribbble"
+    url = "x"
+    pre = "https://dribbble.com/"
+    weight = 4
+[[menu.main]]
+    name = "Blog"
+    url = "/blog"
+    weight = 5
+
+# Footer Sitemap
+[[menu.sitemap]]
+    name = "Project"
+    url = "/project"
+    weight = 1
+[[menu.sitemap]]
+    name = "Behance"
+    url = "x"
+    pre = "https://www.behance.net/"
+    weight = 2
+[[menu.sitemap]]
+    name = "Dribbble"
+    url = "x"
+    pre = "https://dribbble.com/"
+    weight = 3
+[[menu.sitemap]]
+    name = "Blog"
+    url = "/blog"
+    weight = 4
+[[menu.sitemap]]
+    name = "404"
+    url = "/404.html"
+    weight = 5
+
+# Footer Address
+[params.address]
+email = "apsho@example.com"
+phone = "+(448) 833 5272 332"
+
+# Social
+[[params.social]]
+    name = "facebook"
+    link = "https://facebook.com/"
+    image = "images/social/facebook.svg"
+[[params.social]]
+    name = "instagram"
+    link = "https://instagram.com/"
+    image = "images/social/instagram.svg"
+[[params.social]]
+    name = "twitter"
+    link = "https://twitter.com/static_mania"
+    image = "images/social/twitter.svg"
+[[params.social]]
+    name = "linkedin"
+    link = "https://linkedin.com/company/staticmania"
+    image = "images/social/linkedin.svg"
+[[params.social]]
+    name = "behance"
+    link = "https://behance.net/"
+    image = "images/social/behance.svg"
+[[params.social]]
+    name = "dribble"
+    link = "https://dribbble.com/"
+    image = "images/social/dribble.svg"
+   
+[params]
+
+# Header
+logo = "images/logo.svg"
+logoWhite = "images/logo-white.svg"
+
+# Footer
+footerTitle = "Have a project in mind? <br> Let’s get to work.👋📫"
+
+# Contact
+contactBtnTitle = "Say Hello"
+contactBtnTitle2 = "Contact"
+email = "help@staticmania.com"
+
+# 404page
+Error404Title = "Something is wrong!"
+Error404Btn = "Go to Home"
+
+[taxonomies]
+   tag = "tags"

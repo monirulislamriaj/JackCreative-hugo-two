@@ -1,0 +1,16 @@
+
+{{ define "main" }}
+
+{{ partial "navbar.htm" ( dict "Page" . ) }}
+
+{{ partial "hero.htm" . }}
+
+{{ partial "services.htm" . }}
+
+{{ partial "resume.htm" ( dict "Page" . "Padding" "pt-xxl-14 pb-xxl-10 pb-lg-8 pt-md-9 pb-6" ) }}
+
+{{ partial "project.htm" ( dict "Page" . "Padding" "pb-xxl-14 pb-md-9 pb-6") }}
+
+{{ partial "feedbacks.htm" . }}
+
+{{ end }}

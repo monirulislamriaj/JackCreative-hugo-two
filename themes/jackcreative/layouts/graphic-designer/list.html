@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ partial "navbar.htm" ( dict "Page" . "nav" "home3" )}}
+
+{{ partial "hero-three.htm" . }}
+
+{{ partial "services-two.htm" . }}
+
+{{ partial "project.htm" ( dict "Page" . "padding" "pb-xxl-7 pb-xl-0 pb-0" "display" "d-none" ) }}
+
+{{ partial "resume.htm" ( dict "Page" . "padding" "pt-xxl-14 pb-xxl-10 pb-md-8 pt-sm-9 pt-7 pb-8" )}}
+
+{{ partial "feedbacks.htm" . }}
+
+{{ end }}

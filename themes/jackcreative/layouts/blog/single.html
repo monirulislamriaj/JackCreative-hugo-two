@@ -1,0 +1,85 @@
+{{ define "main" }}
+
+{{ partial "navbar.htm" ( dict "Page" . "nav" "Blog" ) }}
+
+<section class="blog-details  pt-8 pt-lg-10 pt-xl-12 pt-xxl-16">
+  <div class="blog-details-shape-wrapper position-absolute w-100 h-100">
+    <div class="shape-1">
+    </div>
+    <div class="shape-2">
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-lg-12">
+      <article class="card">
+        {{/* blog-des-hero section */}}
+        <div class="blog-des-hero">
+          <h2>{{ .Title }}</h2>
+          <div class="blog-des-hero-content d-sm-flex">
+            <div class="me-xxl-13 me-sm-8 me-0 mb-5">
+              <span>Categroy</span>
+              <a href="{{ printf "tags/%s" .Params.tags | absURL }}">
+                <span class="title">{{ .Params.tags }}</span>
+              </a>
+            </div>
+            <div>
+              <span>Date</span>
+              <span class="title">{{ .Date.Format "2 January 2006" }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="feature-image">
+          <img src="{{ .Params.featureImage | absURL }}" class="w-100" alt="featured-image">
+        </div>
+        {{/* Blog Content */}}
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="related-blog pt-xxl-19 pt-0 pb-xxl-4">
+  <div class="container">
+    {{/* related-blog Section Header */}}
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="mb-7 text-lg-start text-center">Related Blog</h2>
+      </div>
+    </div>
+    <div class="row">
+      {{/* related-blog Item */}}
+      {{ $Page := (where .Page.Site.RegularPages.ByDate.Reverse ".Params.tags" .Params.tags )}}
+      {{ range $index, $element := (first 3 (where $Page "Type" "blog")) }}
+        <div class="col-lg-4">
+          <article class="card ">
+            <div class="card-img">
+              <img src="{{ .Params.banner | absURL }}" alt="featured-thumb1" class="w-100">
+            </div>
+            <div class="card-body">
+              <div class="blog-post-meta pt-4">
+                <ul class="list-unstyled">
+                  <li class="blog-post-tag">
+                    <a href="{{ printf "tags/%s" .Params.tags | absURL }}">
+                      {{ .Params.tags }}
+                    </a>
+                  </li>
+                  <li>
+                    <span class="ms-2">{{ .Date.Format "2 January 2006" }}</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="{{ .Permalink }}">
+                <h5>{{ .Title }}</h5>
+              </a>
+            </div>
+          </article>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  </div>
+</section>
+
+{{ end }}

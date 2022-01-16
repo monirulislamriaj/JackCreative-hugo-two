@@ -1,0 +1,23 @@
+---
+enable: true
+title: Provide Services 🛠
+services:
+  - title: Logo Design
+    description: Strategy formulation is built on "the match between all organisation resources and skills based program. Design is the first thing that catches.
+    image: images/service/services-icon-4.svg
+
+  - title: Brand Indentity
+    description: Strategy formulation is built on "the match between all organisation resources and skills based program. Design is the first thing that catches.
+    image: images/service/services-icon-5.svg
+
+  - title: Illustration
+    description: Strategy formulation is built on "the match between all organisation resources and skills based program. Design is the first thing that catches.
+    image: images/service/services-icon-6.svg
+
+  - title: Print Design
+    description: Strategy formulation is built on "the match between all organisation resources and skills based program. Design is the first thing that catches.
+    image: images/service/services-icon-7.svg
+
+  - title: Social Design
+    description: Strategy formulation is built on "the match between all organisation resources and skills based program. Design is the first thing that catches.
+    image: images/service/services-icon-8.svg

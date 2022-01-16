@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8" />
+  <title>{{ .Title }}</title>
+
+  {{/* mobile responsive meta */}}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+
+  {{/* font-awesome */}}
+  <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" />
+
+  {{/* vendor-style */}}
+  {{ $stylex := resources.Get "vendor/vendor.scss" | resources.ToCSS | minify }}
+  <link href="{{ $stylex.Permalink }}" rel="stylesheet" />
+
+  {{/* Stylesheets */}}
+  {{ $stylex := resources.Get "scss/theme.scss" | resources.ToCSS | minify }}
+  <link href="{{ $stylex.Permalink }}" rel="stylesheet" />
+
+  {{/* Favicon */}}
+  <link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon" />
+  <link rel="icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon" />
+
+  {{/* Other-css-with-font */}}
+  <link rel="stylesheet" href="{{ "icomoon/icomoon.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "slick/slick.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "phosphor-icons/css/phosphor.css" | absURL }}" />
+
+</head>

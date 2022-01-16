@@ -1,0 +1,35 @@
+{{ define "main"}}
+{{ partial "navbar.htm" ( dict "Page" . ) }}
+  <section class="error py-xxl-12 py-lg-9 py-10 py-sm-6">
+    <div class="error-shape-wrapper position-absolute w-100 h-100">
+      <div class="shape-1"></div>
+      <div class="shape-2"></div>
+    </div>
+    {{/* Error Page */}}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="error-content text-center">
+            <div class="logo mb-7">
+              <a class="navbar-brand" href="{{ .Page.Site.BaseURL | absURL }}">
+                <img src="{{ .Page.Site.Params.logo | absURL }}" alt="logo" class="" />
+              </a>
+            </div>
+            <img src="{{ "images/404/error.png" | absURL }}" class="" alt="error-image" />
+            <h3 class="my-5">{{ $.Site.Params.Error404Title }}</h3>
+            <a href="{{ .Page.Site.BaseURL | absURL }}" class="btn btn-lg btn-primary">
+              <span class="position-relative">
+                {{ $.Site.Params.Error404Btn }}
+                <i class="ph-arrow-up-right"></i
+              ></span>
+              <span class="position-relative">
+                {{ $.Site.Params.Error404Btn }}
+                <i class="ph-arrow-up-right"></i
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

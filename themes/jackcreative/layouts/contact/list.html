@@ -1,0 +1,120 @@
+{{ define "main"}}
+
+{{ partial "navbar.htm" ( dict "Page" . "nav" "Contact" )}}
+
+  <section class="contact-form pt-8 pt-xxl-15 pb-xxl-7 pb-0">
+    <div class="contact-form-shape-wrapper position-absolute w-100 h-100">
+      <div class="shape-1">
+      </div>
+      <div class="shape-2">
+      </div>
+      <div class="shape-3">
+      </div>
+      <div class="shape-4">
+      </div>
+      <div class="shape-5">
+      </div>
+    </div>
+    <div class="container">
+      {{/* Contact Form Section Header */}}
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-header">
+            <h2>{{ .Params.SubTitle | safeHTML }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+      {{/* Contact Form Area */}}
+        <div class="col-lg-8">
+          <form class="row">
+            <h3>{{ .Params.FormTitle | safeHTML }}</h3>
+            <div class="col-md-12 col-lg-6">
+              <input type="text" class="form-control" id="inputEmail4" placeholder="{{ .Params.placeholderFName }}">
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <input type="text" class="form-control" id="inputEmail4" placeholder="{{ .Params.placeholderLName }}">
+            </div>
+            <div class="col-md-12 col-lg-12">
+              <input type="text" class="form-control" id="goal" placeholder="{{ .Params.placeholderCompany }}">
+            </div>
+            <div class="col-md-12 col-lg-12">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>{{ .Params.placeholderReachAt }}</option>
+                {{ range .Params.reachAt }}
+                <option value="{{ .name }}">{{ .name }}</option>
+                {{ end }}
+              </select>
+            </div>
+            <div class="col-md-12 col-lg-12">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>{{ .Params.placeholderProject }}</option>
+                {{ range .Params.project }}
+                <option value="{{ .name }}">{{ .name }}</option>
+                {{ end }}
+              </select>
+            </div>
+            <div class="col-md-12 col-lg-12">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>{{ .Params.placeholderBudget }}</option>
+                {{ range .Params.budget }}
+                <option value="{{ .name }}">{{ .name }}</option>
+                {{ end }}
+              </select>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" id="floatingTextarea2" placeholder="{{ .Params.placeholderMsg }}" rows="8"
+                spellcheck="false"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg mt-7 ">
+                <span class=" position-relative">
+                  {{ .Params.button }}
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 15L15 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.875 5L15 5L15 13.125" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg></span>
+                <span class=" position-relative">
+                  {{ .Params.button }}
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 15L15 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.875 5L15 5L15 13.125" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg></span>
+              </button>
+            </div>
+          </form>
+        </div>
+        {{/* Contact Form widget */}}
+        <div class="col-lg-4">
+          <div class="contact-form-widget">
+            <img src="{{ .Params.confIcon | absURL }}" alt="icon">
+            <h6>{{ .Params.confTitle | safeHTML }}</h6>
+            <ul class="list-unstyled">
+              <li>
+                <span>Email</span>
+                <a href="mailto:{{ $.Site.Params.address.email }}">{{ $.Site.Params.address.email }}</a>
+              </li>
+                  
+              <li>
+                <span>Phone</span>
+                <a href="tel:{{ $.Site.Params.address.phone }}">{{ $.Site.Params.address.phone }}</a>
+              </li>
+              <li>
+                {{ $social := .Site.Params.social }}
+                {{ range $social }}
+                  <li>
+                    <span>{{ .name }} Link</span>
+                    <a href="{{ .link | absURL }}" target="_blank">{{ strings.TrimPrefix "https://" .link | truncate 25}}</a>
+                  </li>
+                {{ end }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{ end }}

@@ -1,0 +1,14 @@
+# theme.toml for apsho hugo theme
+
+name = "jackcreative"
+license = "MIT"
+licenselink = "https://github.com/StaticMania/Jackcreative-hugo/blob/master/LICENSE"
+description = "JackCreative Hugo. It’s easy to customize and also well documented. And compatible with Desktop, laptop, mobile, and also compatible with major browsers. We follow the modern design system to craft the template."
+homepage = "http://example.org"
+tags = []
+features = []
+min_version = "0.1.0"
+
+[author]
+  name = "Static Mania"
+  homepage = "https://staticmania.com/"

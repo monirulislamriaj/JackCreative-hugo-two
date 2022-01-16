@@ -1,0 +1,122 @@
+{{ define "main" }}
+
+{{ partial "navbar.htm" ( dict "Page" . "nav" "Project" ) }}
+
+<section class="page-hero">
+  <div class="page-hero-shape-wrapper position-absolute w-100 h-100">
+    <div class="shape-1">
+    </div>
+    <div class="shape-2">
+    </div>
+  </div>
+  {{/* Project Single Hero */}}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-heading">
+          <div class="page-heading-title">
+            <h1>{{ .Title }}</h1>
+          </div>
+          <div class="page-heading-content d-sm-flex justify-content-center justify-content-lg-start">
+            <div class="me-xxl-5 me-lg-8">
+              <div class="item">
+                <span>Client</span>
+                <span class="title">{{ .Params.clientName }}</span>
+              </div>
+              <div class="item">
+                <span>Time</span>
+                <span class="title">{{ .Params.time }}</span>
+              </div>
+            </div>
+            <div class="">
+              <div class="item">
+                <span>Task</span>
+                <span class="title">{{ .Params.taskFull }}</span>
+              </div>
+              <div class="item">
+                <span>Work Link</span>
+                <span class="title"><a href="{{ .Params.projectLink | absURL }}" target="_blank">{{ .Params.linkName }}</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-desc">
+  <div class="project-feature-photo">
+    <img src="{{ .Params.featureImage | absURL }}" alt="Feature Image" class="w-100">
+  </div>
+  <div class="container">
+  {{/* Project Single Contents */}}
+    <div class="row">
+      <div class="col-lg-12 content">{{ .Content }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="project-related pb-0 pb-lg-8 pb-xxl-11">
+  <div class="container">
+    {{/* Project Single all design Header */}}
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="section-header">
+          <h2>All Design</h2>
+          <p>{{ .Params.allDesignP }}</p>
+        </div>
+      </div>
+    </div>
+    {{/* Project Work */}}
+    <div class="row">
+      {{ range .Params.allDesignImg }}
+      <div class="col-md-6">
+        <div class="project-related-item">
+          <img src="{{ .image | absURL}}" alt="" class="">
+        </div>
+      </div>
+      {{ end }}
+  </div>
+</section>
+
+{{ with .Site.RegularPages.Prev . }}
+  <section class="project-three">
+    {{/* Project single Next */}}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-header">
+            <h2>Next projects ✌</h2>
+          </div>
+          <div class="col-lg-12">
+            <div class="project-item one">
+              <div class="project-item-content">
+                <h2>
+                  {{ .Title }}
+                </h2>
+                <p>{{ .Params.taskShort }}</p>
+                <a
+                  href="{{ .Permalink }}"
+                  class="btn btn-secondary btn-lg mb-4 mb-sm-0"
+                >
+                  <span class="position-relative">{{ .Params.buttonName }}</span>
+                  <span class="position-relative">{{ .Params.buttonName }}</span>
+                </a>
+              </div>
+              <div class="project-item-banner">
+                <img
+                  src="{{ .Params.banner | absURL}}"
+                  class="w-100"
+                  alt="project-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+
+{{ end }}

@@ -1,0 +1,47 @@
+---
+enable: true
+title: Resume
+
+experienceTitle: Work Experience
+experience:
+  - title: StaticMania
+    designation: Lead Designer
+    time: August 2018 - December 2019
+  - title: Exclusive Addons
+    designation: Designer Officer
+    time: December 2019 - Current
+
+educationTitle: Education
+education:
+  - title: Graphic Arts Institute
+    degree: MS
+    department: Information Design & Technology
+    time: 2016 – 2017
+  - title: Florida Gulf Coast University
+    degree: BA
+    department: Psychology
+    time: 2014 – 2015
+
+freelanceTitle: Freelance Clients
+freelance:
+  - image: images/resume/client-logo-5.svg
+  - image: images/resume/client-logo-2.svg
+  - image: images/resume/client-logo-3.svg
+  - image: images/resume/client-logo-4.svg
+  - image: images/resume/client-logo-6.svg
+
+skillsTitle: Skills
+skills:
+  - title: HTML, CSS
+  - title: Front-end Development
+  - title: Back-End Development
+  - title: Java Script, PHP
+
+toolsTitle: Tools I use every day
+tools:
+  - image: images/resume/client-logo-21.svg
+  - image: images/resume/client-logo-22.svg
+  - image: images/resume/client-logo-23.svg
+  - image: images/resume/client-logo-24.svg
+  - image: images/resume/client-logo-25.svg
+  - image: images/resume/client-logo-26.svg

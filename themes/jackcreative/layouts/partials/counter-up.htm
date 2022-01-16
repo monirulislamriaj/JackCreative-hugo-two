@@ -1,0 +1,26 @@
+{{ with .Site.Data.counter_up }}
+  {{ if .enable }}
+    <section class="counter-up pb-5">
+      <div class="container">
+        <div class="row">
+          {{/* counter-up Section */}}
+          <div class="col-lg-10 mx-auto">
+            <div class="counter-wraper pb-4 pb-lg-6 pb-xl-8 d-md-flex">
+              {{ $counter := .counter }}
+              {{ range $counter }}
+                <div class="counter-up-content">
+                  <div class="counter-up-content-item">
+                    <div class="counter-percent">
+                      <span class="counter">{{ .number }}</span><span class="percent">+</span>
+                    </div>
+                    <h5>{{ .title }}</h5>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

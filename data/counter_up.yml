@@ -1,0 +1,11 @@
+---
+enable: true
+counter:
+  - title: PROJECTS COMPLETED
+    number: 150
+  - title: DESIGN AWARDS
+    number: 16
+  - title: YEARS EXPERIENCE
+    number: 11
+  - title: HAPPY CLIENTS
+    number: 72

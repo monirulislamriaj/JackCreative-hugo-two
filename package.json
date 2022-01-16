@@ -1,0 +1,22 @@
+{
+  "name": "Jackcreative-hugo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kausarpial/apsho-hugo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kausarpial/apsho-hugo/issues"
+  },
+  "homepage": "https://github.com/kausarpial/apsho-hugo#readme",
+  "devDependencies": {
+    "prettier-plugin-go-template": "0.0.7"
+  }
+}

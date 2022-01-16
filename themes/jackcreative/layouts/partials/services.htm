@@ -1,0 +1,38 @@
+{{ with .Site.Data.services }}
+  {{ if .enable }}
+    <section class="services">
+      <div class="services-shape-wrapper position-absolute w-100 h-100">
+        <div class="shape-1"></div>
+        <div class="shape-2"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-header">
+              <h2>{{ .title }}</h2>
+            </div>
+          </div>
+        </div>
+        {{/* services Item */}}
+        <div class="row">
+          {{ $services := .services }}
+          {{ range $services }}
+            <div class="col-lg-4">
+              <div class="card text-center">
+                <div class="card-icon">
+                  <img src="{{ .image | absURL }}" alt="services-icon" />
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">{{ .title }}</h4>
+                  <p class="card-text">
+                    {{ .description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

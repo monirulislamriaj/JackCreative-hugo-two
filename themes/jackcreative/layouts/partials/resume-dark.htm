@@ -1,0 +1,106 @@
+{{ with .Site.Data.resume_dark }}
+  {{ if .enable }}
+    <section class="resume-two pt-xxl-7 pt-4">
+      <div class="resume-two-shape-wrapper position-absolute w-100 h-100">
+        <div class="shape-1"></div>
+        <div class="shape-2"></div>
+        <div class="shape-3"></div>
+        <div class="shape-4"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
+            <div class="card">
+              <div class="section-header">
+                <h2>{{ .title }}</h2>
+              </div>
+              <div class="card-body">
+                <div class="experiencEducation">
+                  {{/* experience */}}
+                  <div class="experience">
+                    <div class="title">
+                      <h5>{{ .experienceTitle }}</h5>
+                    </div>
+                    {{ $experience := .experience }}
+                    {{ range $experience }}
+                      <div class="content">
+                        <h4>{{ .title }}</h4>
+                        <p>
+                          {{ .designation }} <br />
+                          {{ .time }}
+                        </p>
+                      </div>
+                    {{ end }}
+                  </div>
+                  {{/* education */}}
+                  <div class="education">
+                    <div class="title">
+                      <h5>{{ .educationTitle }}</h5>
+                    </div>
+                    {{ $education := .education }}
+                    {{ range $education }}
+                      <div class="content">
+                        <h4>{{ .title }}</h4>
+                        <p>
+                          {{ .degree }} • {{ .department }} <br />
+                          {{ .time }}
+                        </p>
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+                {{/* freelance */}}
+                <div class="freelance">
+                  <div class="title">
+                    <h5>{{ .freelanceTitle }}</h5>
+                  </div>
+                  <div class="freelance-wrapper">
+                    {{ $freelance := .freelance }}
+                    {{ range $freelance }}
+                      <div class="item">
+                        <img src="{{ .image | absURL}}" alt="logo" />
+                      </div>
+                    {{ end }}
+                  </div>
+                </div>
+                <div class="skillsTools pt-2">
+                {{/* skills */}}
+                  <div class="skills">
+                    <div class="title">
+                      <h5>{{ .skillsTitle }}</h5>
+                    </div>
+                    <div class="text-lg-start">
+                      <div class="content mb-6 mb-lg-0">
+                        <ul class="list-unstyled">
+
+                          {{ $skills := .skills }}
+                          {{ range $skills }}
+                            <li> {{ .title }}</li>
+                          {{ end }}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {{/* tools */}}
+                  <div class="tools">
+                    <div class="title">
+                      <h5>{{ .toolsTitle }}</h5>
+                    </div>
+                    <div class="tools-wrapper">
+                      {{ $tools := .tools }}
+                      {{ range $tools }}
+                        <div class="item">
+                          <img src="{{ .image | absURL }}" alt="logo" />
+                        </div>
+                      {{ end }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

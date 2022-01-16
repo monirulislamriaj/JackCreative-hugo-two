@@ -1,0 +1,59 @@
+{{ $counter := .Site.Data.counter_up.counter}}
+
+{{ with .Site.Data.feedbacks }}
+  {{ if .enable }}
+    <section class="feedback py-8 py-lg-9 py-xxl-10">
+      <div class="container">
+        <div class="row">
+          {{/* Feedback counter-up Section */}}
+          <div class="col-lg-12">
+            <div class="counter-wraper pb-4 pb-lg-6 pb-xl-8 d-md-flex">
+              {{ range $counter }}
+                <div class="counter-up-content">
+                  <div class="counter-up-content-item">
+                    <div class="counter-percent">
+                      <span class="counter">{{ .number }}</span><span class="percent">+</span>
+                    </div>
+                    <h5>{{ .title }}</h5>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <div class="section-header">
+              <h2 class="text-white">{{ .title }}</h2>
+            </div>
+            {{/* feedback-slider */}}
+            <div class="feedback-slider">
+              {{ $review := .review }}
+              {{ range $review }}
+                <div class="feedback-slider-item" data-dot-img="{{ .dataImage | absURL }}"
+                >
+                  <div class="icon">
+                    <img src="{{ .icon | absURL }}" alt="icon" />
+                  </div>
+                  <div class="content">
+                    <h3>{{ .details }}</h3>
+                  </div>
+                  <div class="review">
+                    <div class="profile">
+                      <div class="logo">
+                        <img src="{{ .image | absURL }}" alt="profile-picture" />
+                      </div>
+                      <div class="info">
+                        <h5>{{ .name }}</h5>
+                        <span>at</span>
+                        <h6>{{ .company }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

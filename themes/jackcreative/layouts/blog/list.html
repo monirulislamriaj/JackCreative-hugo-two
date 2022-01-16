@@ -1,0 +1,103 @@
+{{ define "main" }}
+
+{{ partial "navbar.htm" ( dict "Page" . "nav" "Blog" ) }}
+
+<section class="blog pt-xxl-17 pt-lg-10 pt-9 pb-xxl-9">
+  <div class="blog-shape-wrapper position-absolute w-100 h-100">
+    <div class="shape-1">
+    </div>
+    <div class="shape-2">
+    </div>
+    <div class="shape-3">
+    </div>
+    <div class="shape-4">
+    </div>
+    <div class="shape-5">
+    </div>
+  </div>
+  <div class="container">
+    {{/* Blog Section Title */}}
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-header pb-xxl-9 mb-xxl-4 pb-7 pt-xxl-4 pt-md-6 position-relative">
+          <h2>{{ .Params.SubTitle | safeHTML }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {{/* Recent Blog Section Feature */}}
+      {{ $Pages := (where .Pages ".Params.feature" true) }}
+      {{ range $Pages }}
+        <div class="col-lg-12">
+          <article class="card flex-lg-row">
+            <div class="blog-post-item-thumb">
+              <img src="{{ .Params.banner | absURL }}" alt="featured-thumb" class="w-100">
+            </div>
+            <div class="blog-post-content">
+              <div class="blog-post-meta mb-3">
+                <ul class="list-unstyled">
+                  <li class="blog-post-tag">
+                    <a href="{{ printf "tags/%s" .Params.tags | absURL }}">
+                      {{ .Params.tags }}
+                    </a>
+                  </li>
+                  <li class="">
+                    <span class="ms-2">{{ .Date.Format "2 January 2006" }}</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-post-body">
+                <div class="blog-post-body-title">
+                  <a href="{{ .Permalink }}" class="">
+                    <h2>{{ .Title }}</h2>
+                  </a>
+                  <p>{{ .Summary }}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      {{ end }}
+    </div>
+    <div class="row recent-blog">
+      {{/* Recent Blog Section Header */}}
+      <div class="col-lg-12">
+        <div class="section-header pt-xxl-9 pt-7 pb-6">
+          <h2 class="recent-blog-title">{{ .Params.recentHeader }}</h2>
+        </div>
+      </div>
+      {{/* Recent Blog Section Post */}}
+      {{ $Pages := (where .Pages ".Params.feature" false) }}
+      {{ range (.Paginate $Pages).Pages }}
+        <div class="col-lg-4">
+          <article class="card ">
+            <div class="card-img">
+              <img src="{{ .Params.banner | absURL }}" alt="featured-thumb1" class="w-100">
+            </div>
+            <div class="card-body">
+              <div class="blog-post-meta ">
+                <ul class="list-unstyled">
+                  <li class="blog-post-tag">
+                    <a href="{{ printf "tags/%s" .Params.tags | absURL }}">
+                      {{ .Params.tags }}
+                    </a>
+                  </li>
+                  <li class="">
+                    <span class="ms-2">{{ .Date.Format "2 January 2006" }}</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="{{ .Permalink }}" class="">
+                <h5>{{ .Title }}</h5>
+              </a>
+            </div>
+          </article>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "pagination.htm" . }}
+
+{{ end }}
